@@ -13,3 +13,4 @@ def server():
 
     while True:
         data, addr = s.recvfrom(1024)
+
