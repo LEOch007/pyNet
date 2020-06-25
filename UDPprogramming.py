@@ -1,5 +1,6 @@
 import socket
 import threading
+import time
 
 
 def server():
@@ -13,4 +14,11 @@ def server():
 
     while True:
         data, addr = s.recvfrom(1024)
+        time.sleep(1)
+        if not data or data.decode('utf-8') == 'exit':
+            break
+        s.sendto(b'Hello, %s!' % data, addr)
 
+
+# run UDP server
+server()
