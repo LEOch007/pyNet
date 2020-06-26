@@ -1,4 +1,16 @@
+import datetime
 import socket
+
+from ChatRoom.myget import myget
+
+class ChatClient:
+    def __init__(self):
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # TCP
+        self.addr = (myget.get_ip(), 9990)                             # IP address : port
+
+    def start_client(self):
+        pass
+
 
 
 def client():
