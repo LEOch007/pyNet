@@ -7,6 +7,8 @@ class myget:
     def get_ip():
         host = socket.gethostname()
         ip = socket.gethostbyname(host)
+        # for local testing
+        ip = '127.0.0.1'
         return ip
 
     @staticmethod
